@@ -1,13 +1,13 @@
 def select_cards(possible_cards, hand)
-  counter = 0
-  until counter == 3
+  counter = 0 # => keeping track number of times a "card" was put into the pile
+  until counter == 3 # => keep running until 3 cards are in the pile
     possible_cards.each do |current_card|
-      if counter < 3
+      if counter < 3 # => making sure there's no more than 3
         print "Do you want to pick up #{current_card}?"
         answer = gets.chomp
         if answer.downcase == 'y'
           hand << current_card
-          counter += 1
+          counter += 1 # => +1 to counter when a card was chosen
         end
       end
     end
